@@ -2,8 +2,8 @@ import React from 'react'
 
 const EntertainmentCardSlider = () => {
   return (
-    <div>EntertainmentCard.Component</div>
+    <div>EntertainmentCard</div>
   )
 }
 
-export default EntertainmentCardSlider.Component
+export default EntertainmentCardSlider;
