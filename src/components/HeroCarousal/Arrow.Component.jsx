@@ -5,7 +5,7 @@ export function NextArrow(props) {
         <>
             <div
                 className={props.className}
-                style={{ ...props.style }}
+                style={{ ...props.style }} //we could add aditional styles for the arrows here
                 onClick={props.onClick}
             />
         </>
