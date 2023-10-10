@@ -27,13 +27,22 @@ function NavSm() {
 function NavMd() {
     return (
         <>
-            <div className='w-full flex items-center gap-3 bg-white px-3 py-1 rounded-md'>
-                <BiSearch />
-                <input
-                    type="search"
-                    className='w-full bg-transparent border-none focus:outline-none'
-                    placeholder='Search for movies, events, plays, sports and activities'
-                />
+            <div className='flex items-center w-3/4 gap-3'>
+                <div className='w-10 h-10'>
+                    <img
+                        src="https://i.ibb.co/zPBYW3H/imgbin-bookmyshow-office-android-ticket-png.png"
+                        alt="BookMyShow Logo"
+                        className='w-full h-full'
+                    />
+                </div>
+                <div className='w-full flex items-center gap-3 bg-white px-3 py-1 rounded-md'>
+                    <BiSearch />
+                    <input
+                        type="search"
+                        className='w-full bg-transparent border-none focus:outline-none'
+                        placeholder='Search for movies, events, plays, sports and activities'
+                    />
+                </div>
             </div>
         </>
     )

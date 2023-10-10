@@ -49,6 +49,10 @@ const HeroCarousal = () => {
         isFinite: true,
         speed: 500,
         slidesToScroll: 1,
+        autoplay: true,
+        speed: 4000,
+        autoplaySpeed: 3000,
+        cssEase: "linear",
         nextArrow: <NextArrow />,
         prevArrow: <PrevArrow />,
     }
@@ -60,6 +64,10 @@ const HeroCarousal = () => {
         isFinite: true,
         speed: 500,
         slidesToScroll: 1,
+        autoplay: true,
+        speed: 4000,
+        autoplaySpeed: 3000,
+        cssEase: "linear",
         nextArrow: <NextArrow />,
         prevArrow: <PrevArrow />,
     }
