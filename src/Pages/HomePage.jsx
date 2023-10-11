@@ -1,5 +1,7 @@
 //use of useState is to store list of details of movies
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+//import axios to get request from MovieDB
+import axios from 'axios';
 //importing other components
 import EntertainmentCardSlider from "../components/Entertainment/EntertainmentCard.Component";
 import HeroCarousal from "../components/HeroCarousal/HeroCarousal.Component";
@@ -12,6 +14,17 @@ const HomePage = () => {
     const [recommendedMovies, setRecommendedMovies] = useState([]);
     const [premierMovies, setPremierMovies] = useState([]);
     const [onlineStreamEvents, setOnlineStreamEvents] = useState([]);
+
+    useEffect(() => {
+        //create an async function to save all the datas from the MovieDB url
+        const requestTopRatedMovies = async () => {
+            const getTopRatedMovies = await axios.get("https://api.themoviedb.org/3/movie/top_rated?api_key=1163f15eca11a47a8c4b993ac3fb77be");
+
+            setRecommendedMovies(getTopRatedMovies.data.results);
+        };
+
+        requestTopRatedMovies();
+    }, []);
 
     return (
         <>
