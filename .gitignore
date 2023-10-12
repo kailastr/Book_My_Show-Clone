@@ -24,3 +24,5 @@ yarn-error.log*
 
 # to ignore API Key file not to be push 
 API_Key.txt
+
+.env

@@ -15,20 +15,46 @@ const HomePage = () => {
     const [premierMovies, setPremierMovies] = useState([]);
     const [onlineStreamEvents, setOnlineStreamEvents] = useState([]);
 
+    //useEffect for Recommended Movies useState
+    useEffect(() => {
+        //create an async function to save all the datas from the MovieDB url
+        const requestPopularMovies = async () => {
+            const getPopularMovies = await axios.get("/movie/top_rated");
+
+            setRecommendedMovies(getPopularMovies.data.results);
+        };
+
+        requestPopularMovies();
+    }, []);
+
+    //useEffect for Premier Movies useState
     useEffect(() => {
         //create an async function to save all the datas from the MovieDB url
         const requestTopRatedMovies = async () => {
-            const getTopRatedMovies = await axios.get("https://api.themoviedb.org/3/movie/top_rated?api_key=1163f15eca11a47a8c4b993ac3fb77be");
+            const getTopRatedMovies = await axios.get("/movie/upcoming");
 
-            setRecommendedMovies(getTopRatedMovies.data.results);
+            setPremierMovies(getTopRatedMovies.data.results);
         };
 
         requestTopRatedMovies();
     }, []);
 
+    //useEffect for Online Stream useState
+    useEffect(() => {
+        //create an async function to save all the datas from the MovieDB url
+        const requestOnlineStreamMovies = async () => {
+            const getOnlineStreamMovies = await axios.get("/movie/popular");
+
+            setOnlineStreamEvents(getOnlineStreamMovies.data.results);
+        };
+
+        requestOnlineStreamMovies();
+    }, []);
+
     return (
         <>
             <HeroCarousal />
+
             <div className='container mx-auto px-4 md:px-12 my-8'>
                 <h1 className='text-2xl font-bold text-gray-800 sm:ml-3 ml-0 my-3'>
                     The best of Entertainment
@@ -63,7 +89,7 @@ const HomePage = () => {
             <div className='container mx-auto px-4 md:px-12 my-8'>
                 <PosterSlider
                     title="Online streaming event"
-                    subject=""
+                    subject="Popular Streaming Events"
                     posters={onlineStreamEvents}
                     isDark={false}
                 />
