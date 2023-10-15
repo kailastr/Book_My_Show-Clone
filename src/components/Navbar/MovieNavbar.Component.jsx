@@ -25,6 +25,7 @@ const NavbarSm = () => {
     )
 };
 
+// Navbar for large screen
 const NavbarLg = () => {
 
     const { movie } = useContext(MovieContext);
@@ -68,12 +69,12 @@ const MovieNavbar = () => {
     return (
         <>
             <nav className='bg-white border-b-2 lg:border-b-2 lg:bg-darkBackground-700 p-4'>
-                {/* navbar for medium and smaller screens */}
+                {/*calling navbar for medium and smaller screens */}
                 <div className='lg:hidden'>
                     <NavbarSm />
                 </div>
 
-                {/* navbar for larg screen */}
+                {/*calling navbar for larg screen */}
                 <div className='hidden w-full lg:flex'>
                     <NavbarLg />
                 </div>
