@@ -9,6 +9,7 @@ import Slider from 'react-slick';
 import { FaCcVisa, FaCcApplePay } from 'react-icons/fa';
 import PosterSlider from "../components/PosterSlider/PosterSlider.Component";
 import MovieHero from '../components/MovieHero/MovieHero.Component';
+import CastComponent from '../components/Cast/CastComponent';
 
 const MoviePage = () => {
 
@@ -61,7 +62,37 @@ const MoviePage = () => {
         requestMovie();
     }, [id]);
 
-    const settingsCast = {};
+    //for cast section
+    const settingsCast = {
+        infite: false,
+        speed: 500,
+        slidesToShow: 6,
+        slidesToScroll: 4,
+        initialSlide: 1,
+        responsive: [
+            {
+                breakPoint: 1024,
+                settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 3,
+                }
+            },
+            {
+                breakPoint: 600,
+                settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 2,
+                }
+            },
+            {
+                breakPoint: 480,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                }
+            }
+        ]
+    };
 
     const settings = {
         infite: false,
@@ -155,6 +186,20 @@ const MoviePage = () => {
                 </div>
 
                 {/* cast and crew slider */}
+                <div className='my-8'>
+                    <h2 className='text-gray-800 font-bold text-2xl mb-4'>
+                        Cast and Crew
+                    </h2>
+                    <Slider {...settingsCast}>
+                        {cast.map((castData) => (
+                            <CastComponent
+                                image={castData.profile_path}
+                                castName={castData.original_name}
+                                role={castData.character}
+                            />
+                        ))}
+                    </Slider>
+                </div>
 
                 <div className='my-8'>
                     <hr />
