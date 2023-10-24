@@ -4,21 +4,10 @@ import PaymentModal from '../PaymentModal/Payment.Component';
 
 const MovieInfo = ({ movie }) => {
 
-    const [isOpen, setIsOpen] = useState(false);
-    const [price, setPrice] = useState(0);
+    const { isOpen, setIsOpen, price, setPrice, rentMovie, buyMovie } = useContext(MovieContext);
 
     const genres = movie.genre?.map(({ name }) => name).join(",");
     const languages = movie.spoken_languages?.map(({ english_name }) => english_name).join(", ");
-
-    const rentMovie = () => {
-        setIsOpen(true);
-        setPrice(299);
-    }
-
-    const buyMovie = () => {
-        setIsOpen(true);
-        setPrice(499);
-    }
 
     return (
         <>

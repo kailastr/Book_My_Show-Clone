@@ -8,6 +8,26 @@ const PaymentModal = ({ setIsOpen, isOpen, price }) => {
         setIsOpen(false);
     }
 
+    //customising the payment receipt card
+    const launchRazorPay = () => {
+        let options = {
+            key: "rzp_test_SSAhtDJD2hmjQV",
+            amount: price * 100, //multiplying by 100 is to convert the price into paisa
+            currency: "INR",
+            name: "BookMyShow clone",
+            description: "Purchasing/Renting movie ",
+            image: "https://asset.brandfetch.io/id4J58sqa_/idYuv668fY.png",
+            handler: () => { //handler function helps to determine what to do after the payment is complete
+                setIsOpen(false);
+                alert("Payment success ");
+            },
+            theme: { color: "#E8384F" }
+        };
+
+        let razorPay = window.Razorpay(options);
+        razorPay.open();
+    }
+
     return (
         <>
             <Transition appear show={isOpen} as={Fragment}>
@@ -52,9 +72,9 @@ const PaymentModal = ({ setIsOpen, isOpen, price }) => {
                                         <button
                                             type="button"
                                             className="inline-flex justify-center rounded-md border border-transparent bg-red-500 px-4 py-2 text-sm font-medium text-white hover:bg-red-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2"
-                                            onClick={closeModal}
+                                            onClick={launchRazorPay}
                                         >
-                                            Price {price}
+                                            Pay ₹{price}
                                         </button>
                                         <button
                                             type="button"
