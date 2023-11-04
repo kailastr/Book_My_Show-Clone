@@ -4,7 +4,11 @@ import { Link } from "react-router-dom";
 
 const PlayPoster = (props) => {
     return (
-        <a href={props.HrefLink} target="_blank">
+        <a
+            href={props.HrefLink}
+            target="_blank"
+            rel="noreferrer" //this is used to confirm that our page doest have any relations with other sites
+        >
             <div className="flex flex-col items-start gap-2 px-1 md:px-3">
                 <div className="h-40 md:h-80 ">
                     <img

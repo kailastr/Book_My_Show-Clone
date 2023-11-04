@@ -59,6 +59,33 @@ const PlayPage = () => {
                             </div>
                         </div>
                     </div>
+                    <div className='lg:w-1/4 p-4 bg-gray-100 rounded'>
+                        <h2 className='text-2xl font-bold mb-4'>Filters</h2>
+                        <div>
+                            <PlaysFilter
+                                title="Date"
+                                tags={["Today", "Tomorrow", "This Weekend"]}
+                            />
+                        </div>
+                        <div>
+                            <PlaysFilter
+                                title="Language"
+                                tags={["English", "Hindi", "Tamil"]}
+                            />
+                        </div>
+                        <div>
+                            <PlaysFilter
+                                title="Genre"
+                                tags={["Horror", "Raw", "Thriller", "Romance", "Survival"]}
+                            />
+                        </div>
+                        <div>
+                            <PlaysFilter
+                                title="Price"
+                                tags={["Free", "0-500", "501-1000", "1000-1101"]}
+                            />
+                        </div>
+                    </div>
                 </div>
             </div>
         </>
