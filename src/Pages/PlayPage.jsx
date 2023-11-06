@@ -8,7 +8,7 @@ const PlayPage = () => {
     return (
         <>
             <div className='container mx-auto px-4 my-10'>
-                <div className='w-full lg:flex lg:flex-row-reverse gap-4'>
+                <div className='w-full flex flex-col-reverse lg:flex lg:flex-row-reverse gap-4'>
                     <div className='lg:w-3/4 p-4 bg-gray-100 rounded'>
                         <h2 className='text-2xl font-bold mb-4'>Plays in Kochi</h2>
                         <div className='flex flex-wrap'>
@@ -87,6 +87,18 @@ const PlayPage = () => {
                         </div>
                     </div>
                 </div>
+
+                {/* using google maps
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3408.82348538958!2d75.61420327513552!3d31.308623457573983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391a5bded2845701%3A0x78edae4bd3c9c3c7!2sSelection%20Centre%20North%20Jalandhar!5e0!3m2!1sen!2sin!4v1699249496505!5m2!1sen!2sin"
+                    width="800"
+                    height="450"
+                    style={{ border: "0" }}
+                    allowFullScreen=""
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade">
+                </iframe> */}
+
             </div>
         </>
     )
